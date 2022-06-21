@@ -1,0 +1,627 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*
+  background: aquamarine;
+  */
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-weight: normal; /*grossora da fonte*/
+}
+
+html {
+  font-size: 62.5%; /*tira depois tudo*/
+  overflow: hidden;
+}
+
+body {
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /*
+  background: linear-gradient(
+    150deg,
+    #ff0000,
+    #ffa200
+  ); /*Troca o fundo da Tela*/
+
+  background: url(img/MuchaTseBle.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  padding: 5.5rem;
+}
+
+/*Personalizando o nemu Principal*/
+
+header {
+  width: 35rem;
+  height: 70rem;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); /*criando sombra*/
+  backdrop-filter: blur(0.4rem); /*criando desfoque*/
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+/*personalizando a foto*/
+header .mol {
+  padding-top: 2rem;
+}
+
+.mol {
+  position: relative;
+  margin-left: 20%;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ideda {
+  margin-top: 10px;
+}
+
+.mol::before {
+  content: "";
+  position: absolute;
+  inset: -2px 80px; /*dimensão da esfera*/
+  background: linear-gradient(315deg, #00ccff, #d400d4);
+  transition: 0.5s;
+  animation: animate 4s linear infinite;
+}
+
+.mol:hover::before {
+  inset: -10px 0px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mol::after {
+  content: "";
+  position: absolute;
+  inset: 5px; /*grossura da linha*/
+  background: rgba(0, 0, 0, 0.3); /*cor da tampa*/
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.mol:hover {
+  transform: scale(1.05, 1.05);
+}
+
+.foto {
+  position: absolute;
+  inset: 9px; /*almenta a imagens*/
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.foto img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*ajuste da imagen de dentro*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+header .ideda .nome {
+  font-size: 3rem;
+  color: #fff;
+  padding: 0.5rem 0;
+}
+
+header .ideda .post {
+  font-size: 1.8rem;
+  color: #eee;
+  font-weight: lighter;
+}
+
+header .nemu {
+  padding: 1rem 3rem;
+}
+
+header .nemu ul li {
+  margin: 1rem 0;
+  list-style: none;
+}
+
+/*Personalizado o nemu*/
+header .nemu ul li a {
+  display: block;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #eee;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  transition: all 0.2s linear;
+}
+
+header .nemu ul li a:hover {
+  background: #eee;
+  color: #555;
+  transition: none;
+  transform: scale(1.02, 1.02);
+}
+
+/*Criando o segundo Painel */
+.container {
+  position: absolute;
+  margin-left: 30%;
+
+  height: 80rem;
+  width: 100rem;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.4rem); /*criando desfoque*/
+  border-radius: 1rem;
+  overflow: hidden;
+}
+/*Personalizando o Painel Rede Social*/
+.rede {
+  position: absolute;
+  margin-top: 40%;
+  /*
+  height: 10rem; /*altura
+  width: 35rem; /*largura
+  */
+  left: 13%;
+  bottom: 5rem;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: 0.2s linear;
+  backdrop-filter: blur(0.2rem);
+}
+
+.rede a {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  margin: 1rem;
+  color: #fff;
+  font-size: 3rem;
+  border-radius: 1rem;
+}
+
+.rede .fac a:hover {
+  background: #eee;
+  color: #0040ff;
+}
+
+.rede .tw a:hover {
+  background: #eee;
+  color: #00ffff;
+}
+
+.rede .ins a:hover {
+  background: #eee;
+  color: #ff8000;
+}
+
+.rede .pi a:hover {
+  background: #eee;
+  color: #555;
+}
+.rede .li a:hover {
+  background: #eee;
+  color: #00bfff;
+}
+
+.pricipal.ativo {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+}
+/*
+.pricipal.ativo .sobre { ----------------------------------------
+  color: gold;
+}
+*/
+.conteudo.ativo {
+  display: block;
+}
+
+.conteudo {
+  display: none;
+}
+
+/*Personalizando Painel Pricipal*/
+.inicio {
+  position: relative;
+  margin-top: 10%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  padding-bottom: 10rem;
+}
+
+.inicio h3 {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: #eee;
+}
+
+h2 {
+  color: #eee;
+}
+
+.inicio .nome span {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.inicio .post {
+  padding: 1rem 0;
+}
+
+.inicio .post span {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.btn {
+  font-size: 2rem;
+  padding: 0.7rem 4rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  margin-top: 5rem;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #555;
+  transform: scale(1.1, 1.1);
+}
+
+.texto {
+  position: relative;
+  margin-top: 5%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2vh;
+  font-size: 2rem;
+  color: #eee;
+  cursor: pointer;
+}
+
+section {
+  padding: 1rem 5%; /*margin do testo*/
+  min-height: 100%;
+}
+
+.hed {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+}
+
+.sob .bar h3 {
+  font-size: 2.5rem;
+  color: #eee;
+}
+
+.sob .bar h3 span {
+  color: #fff;
+}
+
+.sob .bar p {
+  font-size: 1.5rem;
+  color: #eee;
+  padding: 0.5rem 0;
+}
+/*Criando barra de rolagem*/
+.sob .progre {
+  padding: 1.5rem 0;
+  width: 920px; /*lergura*/
+  height: 600px; /*altura*/
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.sob .progre::-webkit-scrollbar {
+  width: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+.sob .progre::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.sob .progre .pro {
+  margin: 1.5rem 0; /*epacamento entre barra*/
+  padding: 1rem; /*altura da barra*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  width: 98%; /*largura da faixa*/
+  border-radius: 1rem;
+}
+
+.sob .progre .pro h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  color: #fff;
+}
+
+/*Personalizando primeira barras*/
+.sob .progre .pro .Barra {
+  position: relative;
+  width: 100%; /*lagura da barra*/
+  height: 1.3rem; /*grossura da barra*/
+  margin: 1rem 0;
+  background: #8c7373; /*cor da barra*/
+  border-radius: 1rem;
+}
+/*Personalizando a segunda barra*/
+
+.sob .progre .pro .Barra span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 0rem 1rem 1rem 0rem;
+}
+/* Criando barra de progreção com niveis*/
+.sob .progre .pro:nth-child(1) .Barra span {
+  /*---Porcentagen de HTML*/
+  width: 90%;
+}
+
+.sob .progre .pro:nth-child(2) .Barra span {
+  /*---Porcentagen de CSS*/
+  width: 80%;
+}
+
+.sob .progre .pro:nth-child(3) .Barra span {
+  /*---Porcentagem de JavaScript--*/
+  width: 56%;
+}
+
+.sob .progre .pro:nth-child(4) .Barra span {
+  /*--Porcentagem de Photoshop*/
+  width: 10%;
+}
+
+.sob .progre .pro:nth-child(5) .Barra span {
+  /*----Porcentagem de PHP----*/
+  width: 1%;
+}
+.sob .progre .pro:nth-child(6) .Barra span {
+  /*---Porcentagem de React.js-----*/
+  width: 2%;
+}
+.sob .progre .pro:nth-child(7) .Barra span {
+  /*---Porcentagem de Node.js*/
+  width: 5%;
+}
+.sob .progre .pro:nth-child(8) .Barra span {
+  /*---Porcentagem de C#------*/
+  width: 10%;
+}
+/*Criando painel de conhecimentos*/
+.serv .caixa {
+  position: absolute;
+  margin-left: 5%; /*alteração nesesaria*/
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.serv .caixa .box {
+  margin: 2rem; /*distacianemto das caixa*/
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 32rem;
+}
+/*criando efeito de espação*/
+.serv .caixa .box:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+  border: 1px solid gold;
+}
+
+.serv .caixa .box::after {
+  opacity: 1;
+}
+.serv .caixa .box i {
+  font-size: 4.5rem;
+  padding: 1rem 0;
+  color: #eee;
+}
+
+.serv .caixa .box p {
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 0.5rem 3rem;
+}
+
+.edu .caixa-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5rem 0;
+}
+
+.edu .caixa-box .box {
+  width: 40rem; /*alinhamento das linhas*/
+  padding: 0 2rem;
+  padding-bottom: 4rem;
+  border-left: 0.2rem solid #eee;
+}
+
+.edu .caixa-box .box .Ano {
+  position: relative;
+  color: #eee;
+  font-size: 3rem; /*tamanho da fonte*/
+}
+
+.edu .caixa-box .box .Ano::before {
+  position: absolute;
+  content: "";
+  top: 0.3rem;
+  left: -3.1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.edu .caixa-box .box h3 {
+  font-size: 2rem;
+  color: #fff;
+  padding-top: 1rem;
+}
+
+.edu .caixa-box .box p {
+  font-size: 1.3rem;
+  color: #eee;
+  padding: 1rem 0;
+}
+
+.cont .row {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7rem;
+  align-items: center;
+}
+
+/*Criando a Tela de fundo do endereço*/
+.cont .row form {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); /*criando sombra*/
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.cont .row form .box {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  height: 4rem;
+  width: 49%;
+  font-size: 1.7rem;
+  color: #fff;
+  text-transform: none;
+}
+
+.cont .row form .box::placeholder {
+  text-transform: capitalize;
+  color: #eee;
+}
+
+.cont .row form .message {
+  padding: 1rem;
+  height: 15rem;
+  resize: none;
+  width: 100%;
+}
+
+.cont .row form .btn {
+  margin-bottom: 1rem;
+}
+
+.cont .content {
+  padding: 0 2rem;
+  display: flex;
+}
+
+.cont .content .icons {
+  /*distaciamento de tags*/
+  padding: 1rem 5rem;
+}
+
+.cont .content .icons h3 {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+}
+
+.cont .content .icons h3 i {
+  /*distaciamento de texto*/
+  padding-right: 1rem;
+}
+
+.cont .content .icons p {
+  font-size: 1.5rem;
+  color: #eee;
+}
+/*
+.serv .caixa .um:hover i {
+  color: gold;
+}
+*/
+.progress-bar {
+  height: 8px;
+  background: tomato;
+  width: 0%;
+}
+@media (max-width: 1300px) {
+  body {
+    display: block;
+    padding: 40px 60px;
+    position: relative;
+    overflow-y: scroll;
+  }
+  header {
+    display: block;
+    margin: 50px;
+  }
+  .container {
+    position: absolute;
+    margin-left: 2%;
+    width: 800px;
+  }
+
+  .rede {
+    position: absolute;
+    display: block;
+    top: -14%;
+    left: 60%;
+    bottom: 170rem;
+  }
+}

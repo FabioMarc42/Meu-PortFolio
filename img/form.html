@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Caixa de formulario</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="row">
+      <form
+        action="https://formsubmit.co/fabio.m.batista51@gmail.com"
+        method="POST"
+      >
+        <input type="text" class="box" name="nome" placeholder="Seu Nome" />
+        <input type="text" class="box" name="Sobre" placeholder="Sobre Nome" />
+        <input type="text" class="box" name="email" placeholder="Seu e-mail" />
+        <input
+          type="text"
+          class="box"
+          name="projet"
+          placeholder="Motivo do contato"
+        />
+
+        <!--Caixa de messagens--------------->
+        <textarea
+          name="Caixa"
+          id=""
+          cols="30"
+          rows="10"
+          class="box message"
+          placeholder="Deixe sua messagem"
+        ></textarea>
+
+        <!--Tirando a pagina do servidor de e-mail-->
+        <input type="hidden" name="_captcha" value="false" />
+
+        <input
+          type="hidden"
+          name="_next"
+          value="http://fabimarti.ga/img/obg/obg.html"
+        />
+
+        <!--Criando Botao de messagem------------------>
+        <input type="submit" value="enviar messagen" class="btn" />
+      </form>
+    </div>
+  </body>
+</html>
