@@ -22,17 +22,18 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  /*
+
   background: linear-gradient(
     150deg,
     #ff0000,
     #ffa200
   ); /*Troca o fundo da Tela*/
-
+  /*
   background: url(img/MuchaTseBle.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  */
 
   padding: 5.5rem;
 }
